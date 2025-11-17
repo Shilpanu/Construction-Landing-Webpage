@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construction Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        body {
+            background-image: url(construction.avif);
+            background-size: contain;
+        }
+        
+        /* NAVBAR */
+        .navbar {
+            width: 100%;
+            background: #0d1b2a;
+            color: white;
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .navbar nav a {
+            margin: 0 15px;
+            color: #d9d9d9;
+            text-decoration: none;
+        }
+        
+        .navbar nav a:hover {
+            color: white;
+        }
+        
+        .logo h2 {
+            margin-bottom: 3px;
+        }
+        
+        .phone-btn {
+            background: #0fa3e4;
+            padding: 10px 20px;
+            border-radius: 4px;
+            color: white;
+            font-weight: bold;
+        }
+        
+        
+        /***************************************
+                    HERO SECTION
+        ****************************************/
+        .hero {
+            position: relative;
+            height: 600px;
+           display: flex;
+            align-items: center;
+            padding: 0 60px;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.4);
+        }
+        
+        .hero-content {
+            position: relative;
+            color: rgb(216, 198, 198);
+            width: 50%;
+        }
+        
+        .hero-content h1 {
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .hero-content p {
+            font-size: 16px;
+            width: 80%;
+        }
+             
+        /***************************************
+                    QUOTE FORM BOX
+        ****************************************/
+        .quote-box {
+            position: absolute;
+            right: 80px;
+            background: #11a3eb;
+            padding: 30px;
+            border-radius: 5px;
+            width: 320px;
+        }
+        
+        .quote-box h2 {
+            color: white;
+            margin-bottom: 10px;
+        }
+        
+        .quote-box p {
+            color: white;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        .quote-box form input,
+        .quote-box form textarea {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            margin-bottom: 12px;
+            border-radius: 3px;
+        }
+        
+        .quote-box button {
+            width: 100%;
+            background: #ff8c00;
+            border: none;
+            padding: 12px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+        
+        .quote-box button:hover {
+            background: #e67a00;
+        }
+        
+        .privacy {
+            display: block;
+            color: white;
+            font-size: 12px;
+            text-align: center;
+            margin-top: 10px;
+        }
+        
+        
+        /***************************************
+                    ABOUT SECTION
+        ****************************************/
+        .about {
+            padding: 60px;
+            text-align: center;
+            background: hsl(0, 0%, 100%);
+        }
+        
+        .about h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        
+        .about p {
+            width: 70%;
+            margin: 0 auto 40px auto;
+            line-height: 1.6;
+        }
+        
+        .about-images {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .about-images img {
+            width: 300px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        
+        @media (max-width: 900px) {
+            .hero {
+                flex-direction: column;
+                height: auto;
+                padding-bottom: 300px;
+            }
+            .hero-content {
+                width: 100%;
+                text-align: center;
+            }
+            .quote-box {
+                position: static;
+                margin-top: 30px;
+            }
+            .about-images {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        **************************************
+                    footer 
+        ****************************************
+        body {
+            margin: 0;
+            background: #111;
+            font-family: Arial, sans-serif;
+            color: #ddd;
+        }
+        
+        /* Top Banner */
+        .top-message {
+            text-align: center;
+            padding: 18px;
+            font-size: 18px;
+            color: #ccc;
+        }
+        
+        .top-message span {
+            color: #cbdde9ce;
+            font-size: 20px bold;
+        }
+        
+        /* Footer Container */
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 50px 40px;
+            background: #111;
+            border-top: 1px solid #333;
+        }
+                /* Left Box */
+        .footer-left {
+            width: 250px;
+        }
+                .logo {
+            color: rgb(255, 255, 255);
+            font-size: 34px;
+            margin-bottom: 5px;
+        }
+        
+        .sub {
+            margin-top: 0;
+            font-size: 13px;
+            color: #aaa;
+        }
+        
+        /* Country selector */
+        .country-box {
+            display: flex;
+            align-items: center;
+            background: #222;
+            border: 1px solid #333;
+            padding: 10px 15px;
+            width: 140px;
+            gap: 10px;
+            margin-top: 25px;
+            border-radius: 4px;
+        }
+        
+        /* Columns */
+        .footer-links {
+            display: flex;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+        
+        .col {
+            min-width: 170px;
+        }
+        
+        .col h4 {
+            color: #bbbbbb;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+        
+        .col a {
+            display: block;
+            color: hsl(0, 16%, 86%);
+            text-decoration: none;
+            margin: 6px 0;
+            font-size: 14px;
+        }
+        
+        .col a:hover {
+            color: #fff;
+        }
+        
+        /* Social Icons */
+        .social {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .social .icon {
+            background: #f3ecec;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+        
+        .social .icon:hover {
+            background: #f1eaea;
+        }
+        
+        /* Footer Bottom */
+        .footer-bottom {
+            text-align: center;
+            padding: 25px 40px;
+            font-size: 13px;
+            color: #e40c0c;
+            border-top: 1px solid #333;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .footer {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+            }
+        
+            .footer-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+            }
+        
+            .footer-left {
+                text-align: center;
+            }
+        }
+        
+    </style>
+
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">
+            <h2>CONSTRUCTION</h2>
+            <span>Just another WordPress site</span>
+        </div>
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Theme Info</a>
+            <a href="#">Page Example</a>
+            <a href="#">Style Guide</a>
+            <a href="#">Blog</a>
+            <a href="#">Contact</a>
+        </nav>
+
+        <div class="phone-btn">
+        <span><i class="fa-solid fa-phone"></i>123456789</span>
+        </div>
+    </header>
+
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <h1>Use our trusted service to<br>build your dream home</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vel risus ac scelerisque.</p>
+        </div>
+
+        <!-- FORM BOX -->
+        <div class="quote-box">
+            <h2>Get a Free Quote!</h2>
+            <p>As soon as you contact our expert team, this will be the only form you have to fill in!</p>
+
+            <form>
+                <input type="text" placeholder="Enter your name">
+                <input type="email" placeholder="Enter your email">
+                <input type="text" placeholder="Enter your phone number">
+                <textarea placeholder="Add your Message"></textarea>
+
+                <button type="submit">REQUEST A CALLBACK</button>
+            </form>
+
+            <span class="privacy">100% privacy Guaranteed.</span>
+        </div>
+    </section>
+
+
+    <!-- ABOUT SECTION -->
+    <section class="about">
+        <h2>About Construction</h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse molestie vel risus ac scelerisque.
+            Etiam eu velit porta, tincidunt justo a, dictum leo. Aenean euismod condimentum turpis. Proin varius
+            sem id fringilla rutrum. Maecenas euismod nulla non magna molestie gravida.
+        </p>
+        <div class="about-images">
+            <img src="Consmall1.JPG" alt="">
+            <img src="consmall2.JPG" alt="">
+            <img src="Consmall3.JPG" alt="">
+        </div>
+    </section>
+    <!-- TOP TEXT -->
+<div class="top-message">
+    <span>Subscribe today</span>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+
+    <div class="footer-left">
+        <h2 class="logo">iStock</h2>
+        </div>
+    <div class="footer-links">
+    <div class="col">
+            <h4>LEARN MORE</h4>
+            <a href="#">Plans and pricing</a>
+            <a href="#">iStock promo codes</a>
+            <a href="#">Tips and tricks</a>
+            <a href="#">Search Guide</a>
+            <a href="#">Stock photos</a>
+            <a href="#">Stock videos</a>
+            <a href="#">Stock illustrations</a>
+            <a href="#">Plugins and apps</a>
+            <a href="#">License information</a>
+            <a href="#">Legal / Privacy</a>
+        </div>
+        <div class="col">
+            <h4>COMPANY</h4>
+            <a href="#">About us</a>
+            <a href="#">Newsroom</a>
+            <a href="#">Investor</a>
+            <a href="#">Careers</a>
+            <a href="#">Affiliates</a>
+            <a href="#">Sell stock</a>
+            <a href="#">Contributor support</a>
+        </div>
+        <div class="col">
+            <h4>SUPPORT</h4>
+            <a href="#">Contact us</a>
+            <a href="#">FAQ</a>
+            <a href="#">Site map</a>
+            <!-- Social Icons -->
+            <div class="social">
+                <div class="icon"><i class="fa-brands fa-twitter fa-beat"></i></div>
+                <div class="icon"><i class="fa-brands fa-youtube"></i></div>
+                <div class="icon"><i class="fa-brands fa-facebook"></i></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
